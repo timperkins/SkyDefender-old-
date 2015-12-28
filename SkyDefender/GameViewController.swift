@@ -1,52 +1,27 @@
-//
-//  GameViewController.swift
-//  SkyDefender
-//
-//  Created by perkins on 12/21/15.
-//  Copyright (c) 2015 Tim Perkins. All rights reserved.
-//
-
 import UIKit
 import SpriteKit
 
 class GameViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if let scene = GameScene(fileNamed:"GameScene") {
-            // Configure the view.
-            let skView = self.view as! SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
-        }
+//        let scene = LoadingScene(size: view.bounds.size)
+        
+        // TODO: remove below and swap for loadingscene
+        let scene = LevelScene(size: view.bounds.size)
+        scene.userData = NSMutableDictionary()
+        let level = Util.levels[0]
+        scene.userData?.setObject(level, forKey: "level")
+        
+        let skView = view as! SKView
+        skView.showsFPS = true
+        skView.showsPhysics = true
+        skView.showsNodeCount = true
+        skView.ignoresSiblingOrder = true
+        scene.scaleMode = .ResizeFill
+        skView.presentScene(scene)
     }
-
-    override func shouldAutorotate() -> Bool {
-        return true
-    }
-
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
-        } else {
-            return .All
-        }
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Release any cached data, images, etc that aren't in use.
-    }
-
+    
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
