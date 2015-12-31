@@ -36,6 +36,7 @@
 		D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F495281C32E30900B68198 /* MovingBodyTrait.swift */; };
 		D0F4952B1C34384900B68198 /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952A1C34384900B68198 /* Life.swift */; };
 		D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952C1C343F1900B68198 /* Explosion.swift */; };
+		D0F4952F1C35E2C000B68198 /* LevelPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952E1C35E2C000B68198 /* LevelPlane.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		D0F495281C32E30900B68198 /* MovingBodyTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingBodyTrait.swift; sourceTree = "<group>"; };
 		D0F4952A1C34384900B68198 /* Life.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Life.swift; sourceTree = "<group>"; };
 		D0F4952C1C343F1900B68198 /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
+		D0F4952E1C35E2C000B68198 /* LevelPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelPlane.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				D06D72D11C287C1400119636 /* Util.swift */,
 				D0F495281C32E30900B68198 /* MovingBodyTrait.swift */,
 				D0F495241C31E27200B68198 /* Plane.swift */,
+				D0F4952E1C35E2C000B68198 /* LevelPlane.swift */,
 				D0F4952A1C34384900B68198 /* Life.swift */,
 				D0F4952C1C343F1900B68198 /* Explosion.swift */,
 				D03329C81C2CA13700540124 /* CollisionCategories.swift */,
@@ -297,6 +300,7 @@
 				D0F4952B1C34384900B68198 /* Life.swift in Sources */,
 				D06D72D41C287EA800119636 /* LevelScene.swift in Sources */,
 				D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */,
+				D0F4952F1C35E2C000B68198 /* LevelPlane.swift in Sources */,
 				D06D72A91C285FC100119636 /* AppDelegate.swift in Sources */,
 				D03329C71C2B919B00540124 /* Missle.swift in Sources */,
 				D0C900F51C28E9DA00E4BA73 /* PauseModal.swift in Sources */,

@@ -7,7 +7,11 @@ class Util {
     static let deviceSize = UIScreen.mainScreen().bounds.size
     static let levels = [Level(
         background: SKSpriteNode(imageNamed: "dark-forest"),
-        title: "Level 1"
+        title: "Level 1",
+        levelPlanes: [
+            LevelPlane(plane: Plane(), delay: 1, position: CGPoint(x: -1, y: 0.5)),
+            LevelPlane(plane: Plane(), delay: 1, position: CGPoint(x: 1, y: 0.4))
+        ]
     )]
     
     static let backgroundAnchorHeight: CGFloat = 80.0
@@ -24,6 +28,7 @@ class Util {
     static let onTouch = "onTouch"
     static let pauseButton = "pauseButton"
     static let pauseModal = "pauseModal"
+    static let resumeFlipping = "resumeFlipping"
     static let shootMissle = "shootMissle"
 }
 

@@ -20,12 +20,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         initBase()
         initGround()
         
-        let plane = Plane(position: CGPoint(x: -500, y: 400))
-        background!.addChild(plane)
-        
-        let plane2 = Plane(position: CGPoint(x: -510, y: 390))
-        background!.addChild(plane2)
-        
+        for levelPlane in level!.levelPlanes {
+            background!.addChild(levelPlane.plane!)
+        }
     }
     
     override func willMoveFromView(view: SKView) {
@@ -61,7 +58,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         background!.name = Util.background
         background!.size = CGSize(width: Util.backgroundLength, height: Util.backgroundLength)
         background!.position = CGPoint(x: size.width/2, y: CGFloat(Util.backgroundAnchorHeight))
-        background!.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: -Util.backgroundLength, y: -Util.backgroundAnchorHeight, width: Util.backgroundLength*2, height: Util.backgroundLength))
+        background!.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: -Util.backgroundLength/2, y: -Util.backgroundAnchorHeight, width: Util.backgroundLength, height: Util.backgroundLength/2))
         background!.physicsBody?.dynamic = true
         background!.physicsBody?.usesPreciseCollisionDetection = true
         background!.physicsBody?.categoryBitMask = CollisionCategories.Bg
@@ -144,6 +141,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                     if let curExplosion = secondBody.node as? Explosion {
                         curPlane.hit(curExplosion)
                     }
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Plane != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Bg != 0)) {
+                if let curPlane = firstBody.node as? Plane {
+                    curPlane.flip()
                 }
         }
     }
