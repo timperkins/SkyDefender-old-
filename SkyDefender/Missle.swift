@@ -1,10 +1,10 @@
 import UIKit
 import SpriteKit
 
-class Missle: SKShapeNode {
-    let missleSpeed = CGFloat(400)
+class Missle: SKShapeNode, MovingBodyTrait {
+    var angle: CGFloat = 0
+    var movingSpeed = CGFloat(400)
     var damage: Int?
-    var angle: CGFloat?
     init(position: CGPoint, angle: CGFloat = 0, damage: Int = 10) {
         super.init()
 
@@ -24,16 +24,22 @@ class Missle: SKShapeNode {
         physicsBody?.categoryBitMask = CollisionCategories.Missle
         physicsBody?.contactTestBitMask = CollisionCategories.Bg | CollisionCategories.Plane | CollisionCategories.Bomb
         physicsBody?.collisionBitMask = 0
-        physicsBody?.velocity = CGVector(dx: 0, dy: missleSpeed)
+        physicsBody?.velocity = CGVector(dx: 0, dy: movingSpeed)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    func setVelocity(angle: CGFloat) {
-        let vx = sin(angle) * missleSpeed
-        let vy = cos(angle) * missleSpeed
+    func updateVelocity(angle: CGFloat) {
+        let vx = sin(angle) * movingSpeed
+        let vy = cos(angle) * movingSpeed
         physicsBody?.velocity = CGVector(dx: vx, dy: vy)
+    }
+    
+    func explode() {
+        parent?.addChild(Explosion(position: self.position))
+        removeFromParent()
+        Util.movingBodies.removeObject(self as SKNode)
     }
 }

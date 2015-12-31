@@ -19,6 +19,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         initBackground()
         initBase()
         initGround()
+        
+        let plane = Plane(position: CGPoint(x: -500, y: 400))
+        background!.addChild(plane)
+        
+        let plane2 = Plane(position: CGPoint(x: -510, y: 390))
+        background!.addChild(plane2)
+        
     }
     
     override func willMoveFromView(view: SKView) {
@@ -98,9 +105,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             self.gun?.angle = CGFloat(roll)
             
             for node in Util.movingBodies {
-                let movingBody = node as! Missle
-                movingBody.setVelocity(movingBody.angle! - CGFloat(self.deviceTilt))
-                
+                if let movingBody = node as? MovingBodyTrait {
+                    movingBody.updateVelocity(movingBody.angle - CGFloat(self.deviceTilt))
+                }
             }
         })
     }
@@ -117,12 +124,25 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if ((firstBody.categoryBitMask & CollisionCategories.Missle != 0) &&
-            (secondBody.categoryBitMask & CollisionCategories.Bg != 0)){
+            (secondBody.categoryBitMask & CollisionCategories.Bg != 0)) {
                 if let curMissle = firstBody.node as? Missle {
                     curMissle.removeFromParent()
-                    
-                    if let idx = Util.movingBodies.indexOf(curMissle) {
-                        Util.movingBodies.removeAtIndex(idx)
+                    Util.movingBodies.removeObject(curMissle as SKNode)
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Missle != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Plane != 0)) {
+                if let curMissle = firstBody.node as? Missle {
+                    curMissle.explode()
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Plane != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Explosion != 0)) {
+                if let curPlane = firstBody.node as? Plane {
+                    if let curExplosion = secondBody.node as? Explosion {
+                        curPlane.hit(curExplosion)
                     }
                 }
         }

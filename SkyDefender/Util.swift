@@ -26,3 +26,11 @@ class Util {
     static let pauseModal = "pauseModal"
     static let shootMissle = "shootMissle"
 }
+
+extension Array where Element : Equatable {
+    mutating func removeObject(object : Generator.Element) {
+        if let index = self.indexOf(object) {
+            self.removeAtIndex(index)
+        }
+    }
+}

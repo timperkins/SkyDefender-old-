@@ -31,6 +31,11 @@
 		D06D72D41C287EA800119636 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D31C287EA800119636 /* LevelScene.swift */; };
 		D06D72D61C28831800119636 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D51C28831800119636 /* Level.swift */; };
 		D0C900F51C28E9DA00E4BA73 /* PauseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */; };
+		D0F495251C31E27200B68198 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F495241C31E27200B68198 /* Plane.swift */; };
+		D0F495271C31E3AE00B68198 /* plane@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F495261C31E3AE00B68198 /* plane@3x.png */; };
+		D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F495281C32E30900B68198 /* MovingBodyTrait.swift */; };
+		D0F4952B1C34384900B68198 /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952A1C34384900B68198 /* Life.swift */; };
+		D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952C1C343F1900B68198 /* Explosion.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +77,11 @@
 		D06D72D31C287EA800119636 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		D06D72D51C28831800119636 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseModal.swift; sourceTree = "<group>"; };
+		D0F495241C31E27200B68198 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
+		D0F495261C31E3AE00B68198 /* plane@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@3x.png"; sourceTree = "<group>"; };
+		D0F495281C32E30900B68198 /* MovingBodyTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingBodyTrait.swift; sourceTree = "<group>"; };
+		D0F4952A1C34384900B68198 /* Life.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Life.swift; sourceTree = "<group>"; };
+		D0F4952C1C343F1900B68198 /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +134,10 @@
 				D06D72CF1C28646000119636 /* LevelSelectScene.swift */,
 				D06D72D51C28831800119636 /* Level.swift */,
 				D06D72D11C287C1400119636 /* Util.swift */,
+				D0F495281C32E30900B68198 /* MovingBodyTrait.swift */,
+				D0F495241C31E27200B68198 /* Plane.swift */,
+				D0F4952A1C34384900B68198 /* Life.swift */,
+				D0F4952C1C343F1900B68198 /* Explosion.swift */,
 				D03329C81C2CA13700540124 /* CollisionCategories.swift */,
 				D06D72AE1C285FC100119636 /* GameViewController.swift */,
 				D06D72B01C285FC100119636 /* Main.storyboard */,
@@ -149,6 +163,7 @@
 				D03329B01C29CA8500540124 /* small-logo@3x.png */,
 				D03329A61C29BC9100540124 /* list@3x.png */,
 				D03329C21C2B402D00540124 /* base@3x.png */,
+				D0F495261C31E3AE00B68198 /* plane@3x.png */,
 				D03329B51C2B1BF500540124 /* gun@3x.png */,
 				D03329C41C2B430D00540124 /* dark-forest@2x.png */,
 				D03329AE1C29C8A500540124 /* pause-button@3x.png */,
@@ -243,6 +258,7 @@
 			files = (
 				D03329AF1C29C8A500540124 /* pause-button@3x.png in Resources */,
 				D03329B11C29CA8500540124 /* small-logo@3x.png in Resources */,
+				D0F495271C31E3AE00B68198 /* plane@3x.png in Resources */,
 				D03329C31C2B402D00540124 /* base@3x.png in Resources */,
 				D03329C51C2B430D00540124 /* dark-forest@2x.png in Resources */,
 				D03329AD1C29C6DE00540124 /* close-button@3x.png in Resources */,
@@ -272,11 +288,15 @@
 				D06D72AD1C285FC100119636 /* LoadingScene.swift in Sources */,
 				D03329B31C2B1B5E00540124 /* Gun.swift in Sources */,
 				D03329C91C2CA13700540124 /* CollisionCategories.swift in Sources */,
+				D0F495251C31E27200B68198 /* Plane.swift in Sources */,
+				D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */,
 				D03329BB1C2B1C1300540124 /* Base.swift in Sources */,
 				D06D72D61C28831800119636 /* Level.swift in Sources */,
 				D06D72AF1C285FC100119636 /* GameViewController.swift in Sources */,
 				D06D72D21C287C1400119636 /* Util.swift in Sources */,
+				D0F4952B1C34384900B68198 /* Life.swift in Sources */,
 				D06D72D41C287EA800119636 /* LevelScene.swift in Sources */,
+				D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */,
 				D06D72A91C285FC100119636 /* AppDelegate.swift in Sources */,
 				D03329C71C2B919B00540124 /* Missle.swift in Sources */,
 				D0C900F51C28E9DA00E4BA73 /* PauseModal.swift in Sources */,
