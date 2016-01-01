@@ -5,7 +5,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     let motionManager: CMMotionManager = CMMotionManager()
     var pauseModal: PauseModal?
     var background: SKSpriteNode?
-    var base: SKSpriteNode?
+    var base: Base?
     var gun: Gun?
     var level: Level?
     var deviceTilt = 0.0
@@ -77,14 +77,11 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func initBase() {
-        base = SKSpriteNode(imageNamed: "base")
-        base?.zPosition = 2
-        base?.position = CGPoint(x: 0, y: 0)
-        base?.anchorPoint = CGPoint(x: 0.5, y: 1)
+        base = Base()
         background?.addChild(base!)
         
         gun = Gun(scene: self)
-        gun?.zPosition = 2
+        gun?.zPosition = 3
         base?.addChild(gun!)
     }
     
@@ -156,6 +153,22 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             (secondBody.categoryBitMask & CollisionCategories.Bg != 0)) {
                 if let curPlane = firstBody.node as? Plane {
                     curPlane.flip()
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Bomb != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Base != 0)) {
+                if let curBomb = firstBody.node as? Bomb {
+                    curBomb.explode()
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Explosion != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Base != 0)) {
+                if let curExplosion = firstBody.node as? Explosion {
+                    if let curBase = secondBody.node as? Base {
+                        curBase.hit(curExplosion)
+                    }
                 }
         }
     }

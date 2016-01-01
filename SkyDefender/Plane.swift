@@ -15,7 +15,7 @@ class Plane: Life, MovingBodyTrait {
         }
     }
     init(movingSpeed: CGFloat = 60) {
-        super.init(size: theTexture.size())
+        super.init(size: theTexture.size(), onTop: true)
         
         // MARK: set properties
         self.movingSpeed = movingSpeed
@@ -24,7 +24,7 @@ class Plane: Life, MovingBodyTrait {
         
         // MARK: set SKNode properties
 //        self.position = position
-        zPosition = 4
+        zPosition = 5
         physicsBody = SKPhysicsBody(texture: self.theTexture, size:planeNode!.size)
         physicsBody?.velocity = CGVector(dx: movingSpeed, dy: 0)
         physicsBody?.dynamic = true
@@ -36,7 +36,7 @@ class Plane: Life, MovingBodyTrait {
         physicsBody?.collisionBitMask = CollisionCategories.Missle
         
         Util.movingBodies.append(self)
-        
+        initDropBombs()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -69,5 +69,22 @@ class Plane: Life, MovingBodyTrait {
         let doWait = SKAction.waitForDuration(1)
         let doSequence = SKAction.sequence([doWait, doResumeFlipping])
         runAction(doSequence, withKey: Util.resumeFlipping)
+    }
+    
+    func initDropBombs() {
+        dropNextBomb()
+    }
+    
+    func dropNextBomb() {
+        let delay = Double((Double(arc4random_uniform(10)) * 0.1) + 1)
+        let doWait = SKAction.waitForDuration(delay)
+        let doDrop = SKAction.runBlock({
+            let initialDirection = self.movingSpeed > 0 ? 0 : CGFloat(M_PI)
+            let bomb = Bomb(position: self.position, initialDirection: initialDirection)
+            self.parent?.addChild(bomb)
+            self.dropNextBomb()
+        })
+        let doSequence = SKAction.sequence([doWait, doDrop])
+        runAction(doSequence)
     }
 }

@@ -44,7 +44,7 @@ class Gun: SKSpriteNode {
         let missleDelay = SKAction.waitForDuration(automaticInterval)
         let fireMissle = SKAction.runBlock({
             let missleX = CGFloat(sin(self.angle)) * adj
-            let missleY = CGFloat(cos(self.angle)) * adj
+            let missleY = CGFloat(cos(self.angle)) * adj + self.parent!.position.y
             let missle = Missle(position: CGPoint(x: missleX, y: missleY), angle: self.angle)
             self.theScene?.background?.addChild(missle)
             Util.movingBodies.append(missle)

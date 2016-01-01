@@ -5,12 +5,14 @@ class Life: SKNode {
     var healthBarContainer: SKShapeNode?
     var healthBar: SKShapeNode?
     var size = CGSize(width: 0, height: 0)
+    var onTop = true
     var health = 100
     var hitByExplosions = [Explosion]()
-    init(size: CGSize) {
+    init(size: CGSize, onTop: Bool = true) {
         super.init()
         
         self.size = size
+        self.onTop = onTop
         
         setupHealthBar()
     }
@@ -22,13 +24,19 @@ class Life: SKNode {
     func setupHealthBar() {
         let barWidth = abs(size.width)
         healthBarContainer = SKShapeNode(rect: CGRect(x: 0, y: 0, width: barWidth, height: 8), cornerRadius: 1)
+        healthBarContainer?.zPosition = 6
         healthBarContainer?.lineWidth = 0
-        healthBarContainer?.position = CGPoint(x: barWidth / 2 * -1, y: size.height + 3)
+        var yPos = size.height + 3
+        if !onTop {
+            yPos = -size.height - 10
+        }
+        healthBarContainer?.position = CGPoint(x: barWidth / 2 * -1, y: yPos)
         healthBarContainer?.fillColor = SKColor(red: 1, green: 1, blue: 1, alpha: 1)
         self.addChild(healthBarContainer!)
         
         let healthBarWidth = Int(barWidth * CGFloat(self.health) / 100)
         healthBar = SKShapeNode(rect: CGRect(x: 0, y: 0, width: healthBarWidth, height: 8), cornerRadius: 1)
+        healthBar?.zPosition = 7
         healthBar?.fillColor = SKColor(red: 1, green: 0, blue: 0, alpha: 1)
         healthBar?.lineWidth = 0
         healthBar?.position = CGPoint(x: 0, y: 0)

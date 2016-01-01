@@ -13,7 +13,6 @@
 		D03329B11C29CA8500540124 /* small-logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329B01C29CA8500540124 /* small-logo@3x.png */; };
 		D03329B31C2B1B5E00540124 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03329B21C2B1B5E00540124 /* Gun.swift */; };
 		D03329B71C2B1BF500540124 /* gun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329B51C2B1BF500540124 /* gun@3x.png */; };
-		D03329BB1C2B1C1300540124 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03329BA1C2B1C1300540124 /* Base.swift */; };
 		D03329C31C2B402D00540124 /* base@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329C21C2B402D00540124 /* base@3x.png */; };
 		D03329C51C2B430D00540124 /* dark-forest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329C41C2B430D00540124 /* dark-forest@2x.png */; };
 		D03329C71C2B919B00540124 /* Missle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03329C61C2B919B00540124 /* Missle.swift */; };
@@ -37,6 +36,9 @@
 		D0F4952B1C34384900B68198 /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952A1C34384900B68198 /* Life.swift */; };
 		D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952C1C343F1900B68198 /* Explosion.swift */; };
 		D0F4952F1C35E2C000B68198 /* LevelPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952E1C35E2C000B68198 /* LevelPlane.swift */; };
+		D0FCF64F1C36E01F00C8EF98 /* Bomb.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCF64E1C36E01F00C8EF98 /* Bomb.swift */; };
+		D0FCF6531C36FD3500C8EF98 /* bomb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */; };
+		D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCF6541C3711BF00C8EF98 /* Base.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +58,6 @@
 		D03329B01C29CA8500540124 /* small-logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-logo@3x.png"; sourceTree = "<group>"; };
 		D03329B21C2B1B5E00540124 /* Gun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
 		D03329B51C2B1BF500540124 /* gun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun@3x.png"; sourceTree = "<group>"; };
-		D03329BA1C2B1C1300540124 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		D03329C21C2B402D00540124 /* base@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "base@3x.png"; sourceTree = "<group>"; };
 		D03329C41C2B430D00540124 /* dark-forest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-forest@2x.png"; sourceTree = "<group>"; };
 		D03329C61C2B919B00540124 /* Missle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Missle.swift; sourceTree = "<group>"; };
@@ -84,6 +85,9 @@
 		D0F4952A1C34384900B68198 /* Life.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Life.swift; sourceTree = "<group>"; };
 		D0F4952C1C343F1900B68198 /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
 		D0F4952E1C35E2C000B68198 /* LevelPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelPlane.swift; sourceTree = "<group>"; };
+		D0FCF64E1C36E01F00C8EF98 /* Bomb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bomb.swift; sourceTree = "<group>"; };
+		D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb@3x.png"; sourceTree = "<group>"; };
+		D0FCF6541C3711BF00C8EF98 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,7 +111,6 @@
 		D06D729C1C285FC100119636 = {
 			isa = PBXGroup;
 			children = (
-				D03329BA1C2B1C1300540124 /* Base.swift */,
 				D06D72A71C285FC100119636 /* SkyDefender */,
 				D06D72C01C285FC100119636 /* SkyDefenderTests */,
 				D06D72A61C285FC100119636 /* Products */,
@@ -131,6 +134,7 @@
 				D06D72AC1C285FC100119636 /* LoadingScene.swift */,
 				D06D72D31C287EA800119636 /* LevelScene.swift */,
 				D03329B21C2B1B5E00540124 /* Gun.swift */,
+				D0FCF6541C3711BF00C8EF98 /* Base.swift */,
 				D03329C61C2B919B00540124 /* Missle.swift */,
 				D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */,
 				D06D72CF1C28646000119636 /* LevelSelectScene.swift */,
@@ -138,6 +142,7 @@
 				D06D72D11C287C1400119636 /* Util.swift */,
 				D0F495281C32E30900B68198 /* MovingBodyTrait.swift */,
 				D0F495241C31E27200B68198 /* Plane.swift */,
+				D0FCF64E1C36E01F00C8EF98 /* Bomb.swift */,
 				D0F4952E1C35E2C000B68198 /* LevelPlane.swift */,
 				D0F4952A1C34384900B68198 /* Life.swift */,
 				D0F4952C1C343F1900B68198 /* Explosion.swift */,
@@ -168,6 +173,7 @@
 				D03329C21C2B402D00540124 /* base@3x.png */,
 				D0F495261C31E3AE00B68198 /* plane@3x.png */,
 				D03329B51C2B1BF500540124 /* gun@3x.png */,
+				D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */,
 				D03329C41C2B430D00540124 /* dark-forest@2x.png */,
 				D03329AE1C29C8A500540124 /* pause-button@3x.png */,
 				D03329AC1C29C6DE00540124 /* close-button@3x.png */,
@@ -270,6 +276,7 @@
 				D06D72B71C285FC100119636 /* LaunchScreen.storyboard in Resources */,
 				D06D72B41C285FC100119636 /* Assets.xcassets in Resources */,
 				D03329A71C29BC9100540124 /* list@3x.png in Resources */,
+				D0FCF6531C36FD3500C8EF98 /* bomb@3x.png in Resources */,
 				D06D72B21C285FC100119636 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -293,9 +300,10 @@
 				D03329C91C2CA13700540124 /* CollisionCategories.swift in Sources */,
 				D0F495251C31E27200B68198 /* Plane.swift in Sources */,
 				D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */,
-				D03329BB1C2B1C1300540124 /* Base.swift in Sources */,
+				D0FCF64F1C36E01F00C8EF98 /* Bomb.swift in Sources */,
 				D06D72D61C28831800119636 /* Level.swift in Sources */,
 				D06D72AF1C285FC100119636 /* GameViewController.swift in Sources */,
+				D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */,
 				D06D72D21C287C1400119636 /* Util.swift in Sources */,
 				D0F4952B1C34384900B68198 /* Life.swift in Sources */,
 				D06D72D41C287EA800119636 /* LevelScene.swift in Sources */,
