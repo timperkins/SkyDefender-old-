@@ -20,9 +20,17 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         initBase()
         initGround()
         
+        var steps = [SKAction]()
         for levelPlane in level!.levelPlanes {
-            background!.addChild(levelPlane.plane!)
+            let doAddPlane = SKAction.runBlock({
+                self.background!.addChild(levelPlane.plane!)
+            })
+            let doDelay = SKAction.waitForDuration(Double(levelPlane.delay!))
+            steps.append(doDelay)
+            steps.append(doAddPlane)
         }
+        let doSequence = SKAction.sequence(steps)
+        runAction(doSequence)
     }
     
     override func willMoveFromView(view: SKView) {
