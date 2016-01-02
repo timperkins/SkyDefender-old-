@@ -81,7 +81,6 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         background?.addChild(base!)
         
         gun = Gun(scene: self)
-        gun?.zPosition = 3
         base?.addChild(gun!)
     }
     
@@ -132,8 +131,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         if ((firstBody.categoryBitMask & CollisionCategories.Missle != 0) &&
             (secondBody.categoryBitMask & CollisionCategories.Bg != 0)) {
                 if let curMissle = firstBody.node as? Missle {
-                    curMissle.removeFromParent()
-                    Util.movingBodies.removeObject(curMissle as SKNode)
+                    curMissle.quietExplode()
                 }
         }
         

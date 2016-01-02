@@ -17,26 +17,14 @@ class Plane: Life, MovingBodyTrait {
     init(movingSpeed: CGFloat = 60) {
         super.init(size: theTexture.size())
         
-        // MARK: set properties
         self.movingSpeed = movingSpeed
+        zPosition = 5
         
         setupPlaneNode()
-        
-        // MARK: set SKNode properties
-//        self.position = position
-        zPosition = 5
-        physicsBody = SKPhysicsBody(texture: self.theTexture, size:planeNode!.size)
-        physicsBody?.velocity = CGVector(dx: movingSpeed, dy: 0)
-        physicsBody?.dynamic = true
-        physicsBody?.usesPreciseCollisionDetection = true
-        physicsBody?.allowsRotation = false
-        physicsBody?.density = 15
-        physicsBody?.categoryBitMask = CollisionCategories.Plane
-        physicsBody?.contactTestBitMask = CollisionCategories.Bg | CollisionCategories.Explosion
-        physicsBody?.collisionBitMask = CollisionCategories.Missle
+        initPhysics()
+        initDropBombs()
         
         Util.movingBodies.append(self)
-        initDropBombs()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -86,5 +74,21 @@ class Plane: Life, MovingBodyTrait {
         })
         let doSequence = SKAction.sequence([doWait, doDrop])
         runAction(doSequence)
+    }
+    
+    func initPhysics() {
+        physicsBody = SKPhysicsBody(texture: self.theTexture, size:planeNode!.size)
+        physicsBody?.velocity = CGVector(dx: movingSpeed, dy: 0)
+        physicsBody?.dynamic = true
+        physicsBody?.usesPreciseCollisionDetection = true
+        physicsBody?.allowsRotation = false
+        physicsBody?.density = 15
+        physicsBody?.categoryBitMask = CollisionCategories.Plane
+        physicsBody?.contactTestBitMask = CollisionCategories.Bg | CollisionCategories.Explosion
+        physicsBody?.collisionBitMask = CollisionCategories.Missle
+    }
+    
+    override func didExplode() {
+        Util.movingBodies.removeObject(self as SKNode)
     }
 }

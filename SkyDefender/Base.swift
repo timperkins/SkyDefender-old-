@@ -6,7 +6,10 @@ class Base: Life {
     var baseNode: SKSpriteNode?
     init() {
         super.init(size: theTexture.size())
-                
+    
+        explosionSize = 80
+        explosionDamage = 1
+        
         setupBaseNode()
         initPhysics()
     }

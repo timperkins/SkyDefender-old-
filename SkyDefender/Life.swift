@@ -8,12 +8,16 @@ class Life: SKNode {
     var health = 100
     var hitByExplosions = [Explosion]()
     var hideHealthBar = false
-    init(size: CGSize, hideHealthBar: Bool = false, health: Int = 100) {
+    var explosionSize: CGFloat = 50
+    var explosionDamage: CGFloat = 10
+    init(size: CGSize, hideHealthBar: Bool = false, health: Int = 100, explosionSize: CGFloat = 50, explosionDamage: CGFloat = 10) {
         super.init()
         
         self.size = size
         self.hideHealthBar = hideHealthBar
         self.health = health
+        self.explosionSize = explosionSize
+        self.explosionDamage = explosionDamage
         
         if !hideHealthBar {
             setupHealthBar()
@@ -60,14 +64,22 @@ class Life: SKNode {
                 healthBarContainer?.removeActionForKey("fade")
                 healthBarContainer?.runAction(doSequence, withKey: "fade")
             } else {
-                die()
+                explode()
             }
         }
     }
     
-    func die() {
-        removeFromParent()
+    func explode() {
+        parent?.addChild(Explosion(position: self.position, size: explosionSize, damage: explosionDamage))
+        quietExplode()
     }
+    
+    func quietExplode() {
+        removeFromParent()
+        didExplode()
+    }
+    
+    func didExplode() {}
     
     func isAlive() -> Bool {
         return health > 0

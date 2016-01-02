@@ -17,6 +17,7 @@ class Gun: SKSpriteNode {
     }
     init(scene: LevelScene) {
         super.init(texture: theTexture, color: SKColor.clearColor(), size: theTexture.size())
+        zPosition = 3
         theScene = scene
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onTouch:", name: Util.onTouch, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "offTouch:", name: Util.offTouch, object: nil)
@@ -40,14 +41,13 @@ class Gun: SKSpriteNode {
     }
     
     func startFire() {
-        let adj = size.width/2
+        let adj = size.width/2 - 8
         let missleDelay = SKAction.waitForDuration(automaticInterval)
         let fireMissle = SKAction.runBlock({
             let missleX = CGFloat(sin(self.angle)) * adj
             let missleY = CGFloat(cos(self.angle)) * adj + self.parent!.position.y
             let missle = Missle(position: CGPoint(x: missleX, y: missleY), angle: self.angle)
             self.theScene?.background?.addChild(missle)
-            Util.movingBodies.append(missle)
         })
         let missleSequence = SKAction.sequence([fireMissle, missleDelay])
         let missleRepeat = SKAction.repeatActionForever(missleSequence)

@@ -8,29 +8,23 @@ class Bomb: Life, MovingBodyTrait {
     var movingSpeed = CGFloat(40)
     var damage: Int?
     var initialDirection: CGFloat = 0
-    var explosionSize: CGFloat = 50
-    var explosionDamage: CGFloat = 20
     init(position: CGPoint, angle: CGFloat = CGFloat(M_PI), damage: Int = 10, initialDirection: CGFloat = 0) {
         super.init(size: theTexture.size(), hideHealthBar: true, health: 1)
         
         self.angle = angle
         self.damage = damage
         self.initialDirection = initialDirection
-        
+        explosionSize = 50
+        explosionDamage = 20
         self.position = position
-        self.zRotation = initialDirection
-        self.zPosition = 4
-        physicsBody = SKPhysicsBody(rectangleOfSize: theTexture.size())
-        physicsBody?.dynamic = true
-        physicsBody?.usesPreciseCollisionDetection = true
-        physicsBody?.categoryBitMask = CollisionCategories.Bomb
-        physicsBody?.contactTestBitMask = CollisionCategories.Bg | CollisionCategories.Explosion
-        physicsBody?.collisionBitMask = 0
-        physicsBody?.velocity = CGVector(dx: -50, dy: 0)
+        zRotation = initialDirection
+        zPosition = 4
+        
+        setupBombNode()
+        initPhysics()
+        initRotation()
         
         Util.movingBodies.append(self)
-        setupBombNode()
-        initRotation()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -49,14 +43,22 @@ class Bomb: Life, MovingBodyTrait {
         physicsBody?.velocity = CGVector(dx: vx, dy: vy)
     }
     
-    func explode() {
-        parent?.addChild(Explosion(position: self.position, size: explosionSize, damage: explosionDamage))
-        removeFromParent()
+    override func didExplode() {
         Util.movingBodies.removeObject(self as SKNode)
     }
     
     func initRotation() {
         let rotate = SKAction.rotateToAngle(-CGFloat(M_PI_2), duration: 1, shortestUnitArc: true)
         runAction(rotate)
+    }
+    
+    func initPhysics() {
+        physicsBody = SKPhysicsBody(rectangleOfSize: theTexture.size())
+        physicsBody?.dynamic = true
+        physicsBody?.usesPreciseCollisionDetection = true
+        physicsBody?.categoryBitMask = CollisionCategories.Bomb
+        physicsBody?.contactTestBitMask = CollisionCategories.Bg | CollisionCategories.Explosion
+        physicsBody?.collisionBitMask = 0
+        physicsBody?.velocity = CGVector(dx: -50, dy: 0)
     }
 }
