@@ -5,7 +5,7 @@ class Base: Life {
     let theTexture = SKTexture(imageNamed: "base")
     var baseNode: SKSpriteNode?
     init() {
-        super.init(size: theTexture.size(), onTop: false)
+        super.init(size: theTexture.size())
                 
         setupBaseNode()
         initPhysics()

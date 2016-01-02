@@ -5,16 +5,19 @@ class Life: SKNode {
     var healthBarContainer: SKShapeNode?
     var healthBar: SKShapeNode?
     var size = CGSize(width: 0, height: 0)
-    var onTop = true
     var health = 100
     var hitByExplosions = [Explosion]()
-    init(size: CGSize, onTop: Bool = true) {
+    var hideHealthBar = false
+    init(size: CGSize, hideHealthBar: Bool = false, health: Int = 100) {
         super.init()
         
         self.size = size
-        self.onTop = onTop
+        self.hideHealthBar = hideHealthBar
+        self.health = health
         
-        setupHealthBar()
+        if !hideHealthBar {
+            setupHealthBar()
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -26,11 +29,7 @@ class Life: SKNode {
         healthBarContainer = SKShapeNode(rect: CGRect(x: 0, y: 0, width: barWidth, height: 8), cornerRadius: 1)
         healthBarContainer?.zPosition = 6
         healthBarContainer?.lineWidth = 0
-        var yPos = size.height + 3
-        if !onTop {
-            yPos = -size.height - 10
-        }
-        healthBarContainer?.position = CGPoint(x: barWidth / 2 * -1, y: yPos)
+        healthBarContainer?.position = CGPoint(x: barWidth / 2 * -1, y: size.height + 3)
         healthBarContainer?.fillColor = SKColor(red: 1, green: 1, blue: 1, alpha: 1)
         self.addChild(healthBarContainer!)
         
@@ -51,6 +50,7 @@ class Life: SKNode {
             hitByExplosions.append(explosion)
             self.health = self.health - explosion.getDamage()
             if self.isAlive() {
+                if hideHealthBar { return }
                 let healthBarWidth = CGFloat(self.health) / 100
                 healthBar?.xScale = healthBarWidth
                 let doFadeIn = SKAction.fadeInWithDuration(0.1)

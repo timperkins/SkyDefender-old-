@@ -1,8 +1,9 @@
 import UIKit
 import SpriteKit
 
-class Bomb: SKSpriteNode, MovingBodyTrait {
+class Bomb: Life, MovingBodyTrait {
     let theTexture = SKTexture(imageNamed: "bomb")
+    var bombNode: SKSpriteNode?
     var angle: CGFloat = 0
     var movingSpeed = CGFloat(40)
     var damage: Int?
@@ -10,7 +11,7 @@ class Bomb: SKSpriteNode, MovingBodyTrait {
     var explosionSize: CGFloat = 50
     var explosionDamage: CGFloat = 20
     init(position: CGPoint, angle: CGFloat = CGFloat(M_PI), damage: Int = 10, initialDirection: CGFloat = 0) {
-        super.init(texture: theTexture, color: SKColor.clearColor(), size: theTexture.size())
+        super.init(size: theTexture.size(), hideHealthBar: true, health: 1)
         
         self.angle = angle
         self.damage = damage
@@ -23,16 +24,23 @@ class Bomb: SKSpriteNode, MovingBodyTrait {
         physicsBody?.dynamic = true
         physicsBody?.usesPreciseCollisionDetection = true
         physicsBody?.categoryBitMask = CollisionCategories.Bomb
-        physicsBody?.contactTestBitMask = CollisionCategories.Bg
+        physicsBody?.contactTestBitMask = CollisionCategories.Bg | CollisionCategories.Explosion
         physicsBody?.collisionBitMask = 0
         physicsBody?.velocity = CGVector(dx: -50, dy: 0)
         
         Util.movingBodies.append(self)
+        setupBombNode()
         initRotation()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
+    }
+    
+    func setupBombNode() {
+        bombNode = SKSpriteNode(texture: theTexture)
+        bombNode!.size = size
+        self.addChild(bombNode!)
     }
     
     func updateVelocity(angle: CGFloat) {

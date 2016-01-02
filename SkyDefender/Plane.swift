@@ -15,7 +15,7 @@ class Plane: Life, MovingBodyTrait {
         }
     }
     init(movingSpeed: CGFloat = 60) {
-        super.init(size: theTexture.size(), onTop: true)
+        super.init(size: theTexture.size())
         
         // MARK: set properties
         self.movingSpeed = movingSpeed

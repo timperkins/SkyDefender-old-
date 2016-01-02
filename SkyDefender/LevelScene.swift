@@ -144,12 +144,10 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                 }
         }
         
-        if ((firstBody.categoryBitMask & CollisionCategories.Plane != 0) &&
-            (secondBody.categoryBitMask & CollisionCategories.Explosion != 0)) {
-                if let curPlane = firstBody.node as? Plane {
-                    if let curExplosion = secondBody.node as? Explosion {
-                        curPlane.hit(curExplosion)
-                    }
+        if ((firstBody.categoryBitMask & CollisionCategories.Missle != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Bomb != 0)) {
+                if let curMissle = firstBody.node as? Missle {
+                    curMissle.explode()
                 }
         }
         
@@ -179,6 +177,24 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
                 if let curExplosion = firstBody.node as? Explosion {
                     if let curBase = secondBody.node as? Base {
                         curBase.hit(curExplosion)
+                    }
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Plane != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Explosion != 0)) {
+                if let curPlane = firstBody.node as? Plane {
+                    if let curExplosion = secondBody.node as? Explosion {
+                        curPlane.hit(curExplosion)
+                    }
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Bomb != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Explosion != 0)) {
+                if let curBomb = firstBody.node as? Bomb {
+                    if let curExplosion = secondBody.node as? Explosion {
+                        curBomb.hit(curExplosion)
                     }
                 }
         }
