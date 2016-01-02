@@ -91,6 +91,10 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         ground.zPosition = 2
         ground.lineWidth = 0
         ground.position = CGPoint(x: 0, y: base!.size.height*(-1))
+        ground.physicsBody = SKPhysicsBody(edgeLoopFromRect: CGRect(x: -Util.backgroundLength/2, y: 0, width: Util.backgroundLength, height: Util.backgroundLength/2))
+        ground.physicsBody?.categoryBitMask = CollisionCategories.Ground
+        ground.physicsBody?.contactTestBitMask = CollisionCategories.Bomb
+        ground.physicsBody?.collisionBitMask = 0
         background?.addChild(ground)
     }
     
@@ -158,6 +162,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         
         if ((firstBody.categoryBitMask & CollisionCategories.Bomb != 0) &&
             (secondBody.categoryBitMask & CollisionCategories.Base != 0)) {
+                if let curBomb = firstBody.node as? Bomb {
+                    curBomb.explode()
+                }
+        }
+        
+        if ((firstBody.categoryBitMask & CollisionCategories.Bomb != 0) &&
+            (secondBody.categoryBitMask & CollisionCategories.Ground != 0)) {
                 if let curBomb = firstBody.node as? Bomb {
                     curBomb.explode()
                 }

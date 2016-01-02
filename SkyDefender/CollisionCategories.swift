@@ -5,4 +5,5 @@ struct CollisionCategories {
     static let Bg : UInt32 = 0x1 << 3
     static let Explosion : UInt32 = 0x1 << 4
     static let Base : UInt32 = 0x1 << 5
+    static let Ground : UInt32 = 0x1 << 6
 }
