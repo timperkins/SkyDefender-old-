@@ -29,6 +29,7 @@ class Util {
     static let onTouch = "onTouch"
     static let pauseButton = "pauseButton"
     static let pauseModal = "pauseModal"
+    static let restartButton = "restartButton"
     static let resumeFlipping = "resumeFlipping"
     static let shootMissle = "shootMissle"
 }

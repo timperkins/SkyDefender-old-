@@ -23,7 +23,8 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         var steps = [SKAction]()
         for levelPlane in level!.levelPlanes {
             let doAddPlane = SKAction.runBlock({
-                self.background!.addChild(levelPlane.plane!)
+                let plane = Plane.createLevelPlane(levelPlane.position!)
+                self.background!.addChild(plane)
             })
             let doDelay = SKAction.waitForDuration(Double(levelPlane.delay!))
             steps.append(doDelay)
@@ -33,7 +34,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         runAction(doSequence)
     }
     
-    override func willMoveFromView(view: SKView) {
+    func removeScene() {
+        background?.removeAllChildren()
+        background?.removeAllActions()
         background?.removeFromParent()
         pauseModal = nil
     }
@@ -55,10 +58,23 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func returnToLevelSelectScene() {
+        removeScene()
+        
         let levelSelectScene = LevelSelectScene(size: self.size)
         levelSelectScene.scaleMode = self.scaleMode
         let transitionType = SKTransition.fadeWithDuration(1)
         self.view?.presentScene(levelSelectScene,transition: transitionType)
+    }
+    
+    func restartLevel() {
+        removeScene()
+        
+        let levelScene = LevelScene(size: self.size)
+        levelScene.scaleMode = self.scaleMode
+        levelScene.userData = NSMutableDictionary()
+        levelScene.userData?.setObject(self.level!, forKey: "level")
+        let transitionType = SKTransition.fadeWithDuration(1)
+        self.view?.presentScene(levelScene,transition: transitionType)
     }
     
     func initBackground() {

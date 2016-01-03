@@ -14,6 +14,18 @@ class Plane: Life, MovingBodyTrait {
             }
         }
     }
+    
+    static func createLevelPlane(position: CGPoint) -> Plane {
+        let p = Plane()
+        let planeXPosition: CGFloat = position.x < 0 ? -Util.backgroundLength/2 + 50 : Util.backgroundLength/2 - 50
+        let planeYPosition: CGFloat = position.y * Util.backgroundLength/2
+        p.position = CGPoint(x: planeXPosition, y: planeYPosition)
+        if planeXPosition > 0 {
+            p.flip()
+        }
+        return p
+    }
+    
     init(movingSpeed: CGFloat = 60) {
         super.init(size: theTexture.size())
         

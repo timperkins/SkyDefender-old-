@@ -39,6 +39,7 @@
 		D0FCF6531C36FD3500C8EF98 /* bomb@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */; };
 		D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCF6541C3711BF00C8EF98 /* Base.swift */; };
 		D0FCF6571C38859D00C8EF98 /* gun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FCF6561C38859D00C8EF98 /* gun@3x.png */; };
+		D0FCF6591C39B8AF00C8EF98 /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,7 @@
 		D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bomb@3x.png"; sourceTree = "<group>"; };
 		D0FCF6541C3711BF00C8EF98 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		D0FCF6561C38859D00C8EF98 /* gun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun@3x.png"; sourceTree = "<group>"; };
+		D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -175,6 +177,7 @@
 				D0F495261C31E3AE00B68198 /* plane@3x.png */,
 				D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */,
 				D03329C41C2B430D00540124 /* dark-forest@2x.png */,
+				D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */,
 				D03329AE1C29C8A500540124 /* pause-button@3x.png */,
 				D03329AC1C29C6DE00540124 /* close-button@3x.png */,
 				D06D72CD1C28610E00119636 /* splash-image@3x.png */,
@@ -274,6 +277,7 @@
 				D03329AD1C29C6DE00540124 /* close-button@3x.png in Resources */,
 				D06D72CE1C28610E00119636 /* splash-image@3x.png in Resources */,
 				D06D72B71C285FC100119636 /* LaunchScreen.storyboard in Resources */,
+				D0FCF6591C39B8AF00C8EF98 /* restart@3x.png in Resources */,
 				D06D72B41C285FC100119636 /* Assets.xcassets in Resources */,
 				D03329A71C29BC9100540124 /* list@3x.png in Resources */,
 				D0FCF6531C36FD3500C8EF98 /* bomb@3x.png in Resources */,

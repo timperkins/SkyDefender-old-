@@ -26,6 +26,8 @@ class PauseModal {
                 close()
             } else if node.name == Util.listButton {
                 self.scene!.returnToLevelSelectScene()
+            } else if node.name == Util.restartButton {
+                self.scene!.restartLevel()
             }
         }
     }
@@ -72,6 +74,12 @@ class PauseModal {
         listButton.name = Util.listButton
         listButton.position = CGPoint(x: pauseModalBg!.frame.width/2, y: pauseModalBg!.frame.height-250)
         pauseModalBg?.addChild(listButton)
+        
+        let restartButton = SKSpriteNode(imageNamed: "restart")
+        restartButton.zPosition = 102
+        restartButton.name = Util.restartButton
+        restartButton.position = CGPoint(x: pauseModalBg!.frame.width/2, y: pauseModalBg!.frame.height-350)
+        pauseModalBg?.addChild(restartButton)
     }
     
     func open() {
