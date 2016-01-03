@@ -5,7 +5,7 @@ class Life: SKNode {
     var healthBarContainer: SKShapeNode?
     var healthBar: SKShapeNode?
     var size = CGSize(width: 0, height: 0)
-    var health = 100
+    dynamic var health = 100
     var hitByExplosions = [Explosion]()
     var hideHealthBar = false
     var explosionSize: CGFloat = 50
@@ -40,7 +40,7 @@ class Life: SKNode {
         let healthBarWidth = Int(barWidth * CGFloat(self.health) / 100)
         healthBar = SKShapeNode(rect: CGRect(x: 0, y: 0, width: healthBarWidth, height: 8), cornerRadius: 1)
         healthBar?.zPosition = 7
-        healthBar?.fillColor = SKColor(red: 1, green: 0, blue: 0, alpha: 1)
+        healthBar?.fillColor = Util.redColor
         healthBar?.lineWidth = 0
         healthBar?.position = CGPoint(x: 0, y: 0)
         healthBarContainer?.addChild(healthBar!)

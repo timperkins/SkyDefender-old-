@@ -4,6 +4,7 @@ import CoreMotion
 class LevelScene: SKScene, SKPhysicsContactDelegate {
     let motionManager: CMMotionManager = CMMotionManager()
     var pauseModal: PauseModal?
+    var baseHealthBar: BaseHealthBar?
     var background: SKSpriteNode?
     var base: Base?
     var gun: Gun?
@@ -38,7 +39,10 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         background?.removeAllChildren()
         background?.removeAllActions()
         background?.removeFromParent()
+        
+        // Remove shell nodes
         pauseModal = nil
+        baseHealthBar = nil
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -95,6 +99,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     func initBase() {
         base = Base()
         background?.addChild(base!)
+        baseHealthBar = BaseHealthBar(scene: self, base: base!)
         
         gun = Gun(scene: self)
         base?.addChild(gun!)

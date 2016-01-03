@@ -5,7 +5,7 @@ class Base: Life {
     let theTexture = SKTexture(imageNamed: "base")
     var baseNode: SKSpriteNode?
     init() {
-        super.init(size: theTexture.size())
+        super.init(size: theTexture.size(), hideHealthBar: true)
     
         explosionSize = 80
         explosionDamage = 1

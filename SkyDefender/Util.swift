@@ -18,6 +18,12 @@ class Util {
     static let backgroundAnchorHeight: CGFloat = 80.0
     static let backgroundLength: CGFloat = (Util.deviceSize.height * 2) + 50
     
+    static var healthContext = 0
+    
+    static let redColor = SKColor(red: 1, green: 0, blue: 0, alpha: 1)
+    static let yellowColor = SKColor(red: 1, green: 206/255, blue: 0, alpha: 1)
+    static let greenColor = SKColor(red: 0, green: 137/255, blue: 23/255, alpha: 1)
+    
     static var movingBodies = [SKNode]()
     
     static let background = "background"
@@ -26,6 +32,7 @@ class Util {
     static let listButton = "listButton"
     static let missleRepeat = "missleRepeat"
     static let offTouch = "offTouch"
+    static let onBaseHealthChange = "onBaseHealthChange"
     static let onTouch = "onTouch"
     static let pauseButton = "pauseButton"
     static let pauseModal = "pauseModal"

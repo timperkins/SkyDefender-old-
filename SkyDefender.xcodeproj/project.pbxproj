@@ -40,6 +40,7 @@
 		D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCF6541C3711BF00C8EF98 /* Base.swift */; };
 		D0FCF6571C38859D00C8EF98 /* gun@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FCF6561C38859D00C8EF98 /* gun@3x.png */; };
 		D0FCF6591C39B8AF00C8EF98 /* restart@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */; };
+		D0FCF65B1C39CD0500C8EF98 /* BaseHealthBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCF65A1C39CD0500C8EF98 /* BaseHealthBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		D0FCF6541C3711BF00C8EF98 /* Base.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		D0FCF6561C38859D00C8EF98 /* gun@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gun@3x.png"; sourceTree = "<group>"; };
 		D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "restart@3x.png"; sourceTree = "<group>"; };
+		D0FCF65A1C39CD0500C8EF98 /* BaseHealthBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseHealthBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				D0FCF6541C3711BF00C8EF98 /* Base.swift */,
 				D03329C61C2B919B00540124 /* Missle.swift */,
 				D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */,
+				D0FCF65A1C39CD0500C8EF98 /* BaseHealthBar.swift */,
 				D06D72CF1C28646000119636 /* LevelSelectScene.swift */,
 				D06D72D51C28831800119636 /* Level.swift */,
 				D06D72D11C287C1400119636 /* Util.swift */,
@@ -306,6 +309,7 @@
 				D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */,
 				D0FCF64F1C36E01F00C8EF98 /* Bomb.swift in Sources */,
 				D06D72D61C28831800119636 /* Level.swift in Sources */,
+				D0FCF65B1C39CD0500C8EF98 /* BaseHealthBar.swift in Sources */,
 				D06D72AF1C285FC100119636 /* GameViewController.swift in Sources */,
 				D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */,
 				D06D72D21C287C1400119636 /* Util.swift in Sources */,
