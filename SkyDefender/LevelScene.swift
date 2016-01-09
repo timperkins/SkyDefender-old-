@@ -123,13 +123,12 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         motionManager.startDeviceMotionUpdatesToQueue(NSOperationQueue.mainQueue(), withHandler: {
             (data: CMDeviceMotion?, error: NSError?) in
             
-            // Found here: http://bit.ly/1MjsNoZ
-            let q = data!.attitude.quaternion
-            let roll = atan2(2*q.y*q.w-2*q.x*q.z, 1-2*q.y*q.y-2*q.z*q.z)
-            self.deviceTilt = roll
-            self.background!.zRotation = CGFloat(roll)
-            self.gun?.angle = CGFloat(roll)
+            // Found here: http://bit.ly/1x90vdx
+            let rotation = atan2(data!.gravity.y, data!.gravity.x) + M_PI_2
             
+            self.deviceTilt = rotation
+            self.background!.zRotation = CGFloat(rotation)
+            self.gun?.angle = CGFloat(rotation)
             for node in Util.movingBodies {
                 if let movingBody = node as? MovingBodyTrait {
                     movingBody.updateVelocity(movingBody.angle - CGFloat(self.deviceTilt))
