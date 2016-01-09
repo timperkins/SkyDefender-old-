@@ -19,6 +19,7 @@ class Util {
     static let backgroundLength: CGFloat = (Util.deviceSize.height * 2) + 50
     
     static var healthContext = 0
+    static var scoreContext = 1
     
     static let redColor = SKColor(red: 1, green: 0, blue: 0, alpha: 1)
     static let yellowColor = SKColor(red: 1, green: 206/255, blue: 0, alpha: 1)
@@ -29,6 +30,7 @@ class Util {
     static let background = "background"
     static let closeModalButton = "closeModalButton"
     static let fontLight = "HelveticaNeue-UltraLight"
+    static let fontFat = "AvenirNext-Heavy"
     static let listButton = "listButton"
     static let missleRepeat = "missleRepeat"
     static let offTouch = "offTouch"

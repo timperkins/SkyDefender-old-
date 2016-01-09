@@ -10,10 +10,14 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     var gun: Gun?
     var level: Level?
     var deviceTilt = 0.0
+    var levelStats: LevelStats?
+    var levelScore: LevelScore?
     override func didMoveToView(view: SKView) {
         level = userData?.valueForKey("level") as? Level
         background = level!.background
         pauseModal = PauseModal(scene: self)
+        levelStats = LevelStats()
+        levelScore = LevelScore(scene: self, levelStats: levelStats!)
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.physicsWorld.contactDelegate = self
         initAccelerometer()

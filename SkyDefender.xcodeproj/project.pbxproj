@@ -9,13 +9,15 @@
 /* Begin PBXBuildFile section */
 		D03329A71C29BC9100540124 /* list@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329A61C29BC9100540124 /* list@3x.png */; };
 		D03329AD1C29C6DE00540124 /* close-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329AC1C29C6DE00540124 /* close-button@3x.png */; };
-		D03329AF1C29C8A500540124 /* pause-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329AE1C29C8A500540124 /* pause-button@3x.png */; };
 		D03329B11C29CA8500540124 /* small-logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329B01C29CA8500540124 /* small-logo@3x.png */; };
 		D03329B31C2B1B5E00540124 /* Gun.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03329B21C2B1B5E00540124 /* Gun.swift */; };
 		D03329C31C2B402D00540124 /* base@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329C21C2B402D00540124 /* base@3x.png */; };
 		D03329C51C2B430D00540124 /* dark-forest@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D03329C41C2B430D00540124 /* dark-forest@2x.png */; };
 		D03329C71C2B919B00540124 /* Missle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03329C61C2B919B00540124 /* Missle.swift */; };
 		D03329C91C2CA13700540124 /* CollisionCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03329C81C2CA13700540124 /* CollisionCategories.swift */; };
+		D064954F1C3EC8E800F086F5 /* pause-button@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D064954E1C3EC8E800F086F5 /* pause-button@3x.png */; };
+		D06495511C3EC9D000F086F5 /* LevelScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06495501C3EC9D000F086F5 /* LevelScore.swift */; };
+		D06495531C3ECA1C00F086F5 /* LevelStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06495521C3ECA1C00F086F5 /* LevelStats.swift */; };
 		D06D72A91C285FC100119636 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72A81C285FC100119636 /* AppDelegate.swift */; };
 		D06D72AD1C285FC100119636 /* LoadingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72AC1C285FC100119636 /* LoadingScene.swift */; };
 		D06D72AF1C285FC100119636 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72AE1C285FC100119636 /* GameViewController.swift */; };
@@ -56,13 +58,15 @@
 /* Begin PBXFileReference section */
 		D03329A61C29BC9100540124 /* list@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list@3x.png"; sourceTree = "<group>"; };
 		D03329AC1C29C6DE00540124 /* close-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close-button@3x.png"; sourceTree = "<group>"; };
-		D03329AE1C29C8A500540124 /* pause-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-button@3x.png"; sourceTree = "<group>"; };
 		D03329B01C29CA8500540124 /* small-logo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "small-logo@3x.png"; sourceTree = "<group>"; };
 		D03329B21C2B1B5E00540124 /* Gun.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gun.swift; sourceTree = "<group>"; };
 		D03329C21C2B402D00540124 /* base@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "base@3x.png"; sourceTree = "<group>"; };
 		D03329C41C2B430D00540124 /* dark-forest@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dark-forest@2x.png"; sourceTree = "<group>"; };
 		D03329C61C2B919B00540124 /* Missle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Missle.swift; sourceTree = "<group>"; };
 		D03329C81C2CA13700540124 /* CollisionCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollisionCategories.swift; sourceTree = "<group>"; };
+		D064954E1C3EC8E800F086F5 /* pause-button@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "pause-button@3x.png"; sourceTree = "<group>"; };
+		D06495501C3EC9D000F086F5 /* LevelScore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScore.swift; sourceTree = "<group>"; };
+		D06495521C3ECA1C00F086F5 /* LevelStats.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelStats.swift; sourceTree = "<group>"; };
 		D06D72A51C285FC100119636 /* SkyDefender.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SkyDefender.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D06D72A81C285FC100119636 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D06D72AC1C285FC100119636 /* LoadingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingScene.swift; sourceTree = "<group>"; };
@@ -137,11 +141,13 @@
 				D06D72A81C285FC100119636 /* AppDelegate.swift */,
 				D06D72AC1C285FC100119636 /* LoadingScene.swift */,
 				D06D72D31C287EA800119636 /* LevelScene.swift */,
+				D06495521C3ECA1C00F086F5 /* LevelStats.swift */,
 				D03329B21C2B1B5E00540124 /* Gun.swift */,
 				D0FCF6541C3711BF00C8EF98 /* Base.swift */,
 				D03329C61C2B919B00540124 /* Missle.swift */,
 				D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */,
 				D0FCF65A1C39CD0500C8EF98 /* BaseHealthBar.swift */,
+				D06495501C3EC9D000F086F5 /* LevelScore.swift */,
 				D06D72CF1C28646000119636 /* LevelSelectScene.swift */,
 				D06D72D51C28831800119636 /* Level.swift */,
 				D06D72D11C287C1400119636 /* Util.swift */,
@@ -178,10 +184,10 @@
 				D03329C21C2B402D00540124 /* base@3x.png */,
 				D0FCF6561C38859D00C8EF98 /* gun@3x.png */,
 				D0F495261C31E3AE00B68198 /* plane@3x.png */,
+				D064954E1C3EC8E800F086F5 /* pause-button@3x.png */,
 				D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */,
 				D03329C41C2B430D00540124 /* dark-forest@2x.png */,
 				D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */,
-				D03329AE1C29C8A500540124 /* pause-button@3x.png */,
 				D03329AC1C29C6DE00540124 /* close-button@3x.png */,
 				D06D72CD1C28610E00119636 /* splash-image@3x.png */,
 			);
@@ -272,12 +278,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0FCF6571C38859D00C8EF98 /* gun@3x.png in Resources */,
-				D03329AF1C29C8A500540124 /* pause-button@3x.png in Resources */,
 				D03329B11C29CA8500540124 /* small-logo@3x.png in Resources */,
 				D0F495271C31E3AE00B68198 /* plane@3x.png in Resources */,
 				D03329C31C2B402D00540124 /* base@3x.png in Resources */,
 				D03329C51C2B430D00540124 /* dark-forest@2x.png in Resources */,
 				D03329AD1C29C6DE00540124 /* close-button@3x.png in Resources */,
+				D064954F1C3EC8E800F086F5 /* pause-button@3x.png in Resources */,
 				D06D72CE1C28610E00119636 /* splash-image@3x.png in Resources */,
 				D06D72B71C285FC100119636 /* LaunchScreen.storyboard in Resources */,
 				D0FCF6591C39B8AF00C8EF98 /* restart@3x.png in Resources */,
@@ -308,11 +314,13 @@
 				D0F495251C31E27200B68198 /* Plane.swift in Sources */,
 				D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */,
 				D0FCF64F1C36E01F00C8EF98 /* Bomb.swift in Sources */,
+				D06495531C3ECA1C00F086F5 /* LevelStats.swift in Sources */,
 				D06D72D61C28831800119636 /* Level.swift in Sources */,
 				D0FCF65B1C39CD0500C8EF98 /* BaseHealthBar.swift in Sources */,
 				D06D72AF1C285FC100119636 /* GameViewController.swift in Sources */,
 				D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */,
 				D06D72D21C287C1400119636 /* Util.swift in Sources */,
+				D06495511C3EC9D000F086F5 /* LevelScore.swift in Sources */,
 				D0F4952B1C34384900B68198 /* Life.swift in Sources */,
 				D06D72D41C287EA800119636 /* LevelScene.swift in Sources */,
 				D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */,

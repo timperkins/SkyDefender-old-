@@ -37,7 +37,7 @@ class PauseModal {
             pauseButton = SKSpriteNode(imageNamed: "pause-button")
             pauseButton!.name = Util.pauseButton
             pauseButton!.zPosition = 100
-            pauseButton!.position = CGPoint(x: scene!.size.width-30, y: scene!.size.height-30)
+            pauseButton!.position = CGPoint(x: scene!.size.width-20, y: scene!.size.height-20)
         }
         scene!.addChild(pauseButton!)
     }

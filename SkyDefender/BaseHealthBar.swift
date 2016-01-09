@@ -32,25 +32,30 @@ class BaseHealthBar: NSObject {
     }
     
     func setupHealthBar() {
-        let barWidth = abs(scene!.size.width)
-        healthBarContainer = SKShapeNode(rect: CGRect(x: 0, y: 0, width: barWidth, height: 3), cornerRadius: 1)
+        let barHeight: Int = 4
+        let barLeft = 110
+        let barRight = 43
+        let barTop = 23
+        let barWidth: Int = abs(Int(scene!.size.width) - (barLeft + barRight))
+        healthBarContainer = SKShapeNode(rect: CGRect(x: 0, y: 0, width: barWidth, height: barHeight), cornerRadius: 1)
         healthBarContainer?.zPosition = 6
         healthBarContainer?.lineWidth = 0
-        healthBarContainer?.position = CGPoint(x: 0, y: 0)
+        healthBarContainer?.position = CGPoint(x: barLeft, y: Int(scene!.size.height)-barTop)
         healthBarContainer?.fillColor = SKColor(red: 1, green: 1, blue: 1, alpha: 1)
         scene!.addChild(healthBarContainer!)
         
-        let healthBarWidth = Int(barWidth * CGFloat(base!.health) / 100)
-        healthBar = SKShapeNode(rect: CGRect(x: 0, y: 0, width: healthBarWidth, height: 3), cornerRadius: 1)
+        let healthBarWidth = Int(barWidth * Int(base!.health) / 100)
+        healthBar = SKShapeNode(rect: CGRect(x: 0, y: 0, width: healthBarWidth, height: barHeight), cornerRadius: 1)
         healthBar?.zPosition = 7
         healthBar?.lineWidth = 0
         healthBar?.position = CGPoint(x: 0, y: 0)
         healthBarContainer?.addChild(healthBar!)
         
-        updateHealthBar(CGFloat(healthBarWidth))
+        updateHealthBar()
     }
     
-    func updateHealthBar(health: CGFloat) {
+    func updateHealthBar(var health: CGFloat = 100) {
+        health = health > 0 ? health : 0
         let healthBarWidth = health / 100
         healthBar?.xScale = healthBarWidth
         if health < 70 {
