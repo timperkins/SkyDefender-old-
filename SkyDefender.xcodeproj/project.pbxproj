@@ -31,9 +31,12 @@
 		D06D72D41C287EA800119636 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D31C287EA800119636 /* LevelScene.swift */; };
 		D06D72D61C28831800119636 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D51C28831800119636 /* Level.swift */; };
 		D0BC757D1C42010E002A6FB9 /* PointTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC757C1C42010E002A6FB9 /* PointTrait.swift */; };
+		D0BC757F1C420F1E002A6FB9 /* supply-plane@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BC757E1C420F1E002A6FB9 /* supply-plane@3x.png */; };
+		D0BC75811C420F3B002A6FB9 /* SupplyPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC75801C420F3B002A6FB9 /* SupplyPlane.swift */; };
+		D0BC75831C4215C2002A6FB9 /* EnemyBomberPlane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC75821C4215C2002A6FB9 /* EnemyBomberPlane.swift */; };
+		D0BC75851C42160E002A6FB9 /* enemy-bomber-plane@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0BC75841C42160E002A6FB9 /* enemy-bomber-plane@3x.png */; };
 		D0C900F51C28E9DA00E4BA73 /* PauseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */; };
 		D0F495251C31E27200B68198 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F495241C31E27200B68198 /* Plane.swift */; };
-		D0F495271C31E3AE00B68198 /* plane@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F495261C31E3AE00B68198 /* plane@3x.png */; };
 		D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F495281C32E30900B68198 /* MovingBodyTrait.swift */; };
 		D0F4952B1C34384900B68198 /* Life.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952A1C34384900B68198 /* Life.swift */; };
 		D0F4952D1C343F1900B68198 /* Explosion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F4952C1C343F1900B68198 /* Explosion.swift */; };
@@ -85,9 +88,12 @@
 		D06D72D31C287EA800119636 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		D06D72D51C28831800119636 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		D0BC757C1C42010E002A6FB9 /* PointTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTrait.swift; sourceTree = "<group>"; };
+		D0BC757E1C420F1E002A6FB9 /* supply-plane@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "supply-plane@3x.png"; sourceTree = "<group>"; };
+		D0BC75801C420F3B002A6FB9 /* SupplyPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyPlane.swift; sourceTree = "<group>"; };
+		D0BC75821C4215C2002A6FB9 /* EnemyBomberPlane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnemyBomberPlane.swift; sourceTree = "<group>"; };
+		D0BC75841C42160E002A6FB9 /* enemy-bomber-plane@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "enemy-bomber-plane@3x.png"; sourceTree = "<group>"; };
 		D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseModal.swift; sourceTree = "<group>"; };
 		D0F495241C31E27200B68198 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
-		D0F495261C31E3AE00B68198 /* plane@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@3x.png"; sourceTree = "<group>"; };
 		D0F495281C32E30900B68198 /* MovingBodyTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingBodyTrait.swift; sourceTree = "<group>"; };
 		D0F4952A1C34384900B68198 /* Life.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Life.swift; sourceTree = "<group>"; };
 		D0F4952C1C343F1900B68198 /* Explosion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Explosion.swift; sourceTree = "<group>"; };
@@ -156,6 +162,8 @@
 				D0F495281C32E30900B68198 /* MovingBodyTrait.swift */,
 				D0BC757C1C42010E002A6FB9 /* PointTrait.swift */,
 				D0F495241C31E27200B68198 /* Plane.swift */,
+				D0BC75801C420F3B002A6FB9 /* SupplyPlane.swift */,
+				D0BC75821C4215C2002A6FB9 /* EnemyBomberPlane.swift */,
 				D0FCF64E1C36E01F00C8EF98 /* Bomb.swift */,
 				D0F4952E1C35E2C000B68198 /* LevelPlane.swift */,
 				D0F4952A1C34384900B68198 /* Life.swift */,
@@ -186,9 +194,10 @@
 				D03329A61C29BC9100540124 /* list@3x.png */,
 				D03329C21C2B402D00540124 /* base@3x.png */,
 				D0FCF6561C38859D00C8EF98 /* gun@3x.png */,
-				D0F495261C31E3AE00B68198 /* plane@3x.png */,
 				D064954E1C3EC8E800F086F5 /* pause-button@3x.png */,
 				D0FCF6521C36FD3500C8EF98 /* bomb@3x.png */,
+				D0BC75841C42160E002A6FB9 /* enemy-bomber-plane@3x.png */,
+				D0BC757E1C420F1E002A6FB9 /* supply-plane@3x.png */,
 				D03329C41C2B430D00540124 /* dark-forest@2x.png */,
 				D0FCF6581C39B8AF00C8EF98 /* restart@3x.png */,
 				D03329AC1C29C6DE00540124 /* close-button@3x.png */,
@@ -282,11 +291,12 @@
 			files = (
 				D0FCF6571C38859D00C8EF98 /* gun@3x.png in Resources */,
 				D03329B11C29CA8500540124 /* small-logo@3x.png in Resources */,
-				D0F495271C31E3AE00B68198 /* plane@3x.png in Resources */,
+				D0BC757F1C420F1E002A6FB9 /* supply-plane@3x.png in Resources */,
 				D03329C31C2B402D00540124 /* base@3x.png in Resources */,
 				D03329C51C2B430D00540124 /* dark-forest@2x.png in Resources */,
 				D03329AD1C29C6DE00540124 /* close-button@3x.png in Resources */,
 				D064954F1C3EC8E800F086F5 /* pause-button@3x.png in Resources */,
+				D0BC75851C42160E002A6FB9 /* enemy-bomber-plane@3x.png in Resources */,
 				D06D72CE1C28610E00119636 /* splash-image@3x.png in Resources */,
 				D06D72B71C285FC100119636 /* LaunchScreen.storyboard in Resources */,
 				D0FCF6591C39B8AF00C8EF98 /* restart@3x.png in Resources */,
@@ -317,7 +327,9 @@
 				D0F495251C31E27200B68198 /* Plane.swift in Sources */,
 				D0F495291C32E30900B68198 /* MovingBodyTrait.swift in Sources */,
 				D0FCF64F1C36E01F00C8EF98 /* Bomb.swift in Sources */,
+				D0BC75831C4215C2002A6FB9 /* EnemyBomberPlane.swift in Sources */,
 				D06495531C3ECA1C00F086F5 /* LevelStats.swift in Sources */,
+				D0BC75811C420F3B002A6FB9 /* SupplyPlane.swift in Sources */,
 				D06D72D61C28831800119636 /* Level.swift in Sources */,
 				D0FCF65B1C39CD0500C8EF98 /* BaseHealthBar.swift in Sources */,
 				D0BC757D1C42010E002A6FB9 /* PointTrait.swift in Sources */,

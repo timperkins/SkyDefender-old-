@@ -9,12 +9,12 @@ class Util {
         background: SKSpriteNode(imageNamed: "dark-forest"),
         title: "Level 1",
         levelPlanes: [
-            LevelPlane(plane: Plane(), delay: 0, position: CGPoint(x: -1, y: 0.5)),
-            LevelPlane(plane: Plane(), delay: 2, position: CGPoint(x: 1, y: 0.4)),
-            LevelPlane(plane: Plane(), delay: 2, position: CGPoint(x: 1, y: 0.3)),
-            LevelPlane(plane: Plane(), delay: 2, position: CGPoint(x: 1, y: 0.7)),
-            LevelPlane(plane: Plane(), delay: 0, position: CGPoint(x: -1, y: 0.6)),
-            LevelPlane(plane: Plane(), delay: 0, position: CGPoint(x: -1, y: 0.2))
+            LevelPlane(plane: "SupplyPlane", delay: 0, position: CGPoint(x: -1, y: 0.5)),
+            LevelPlane(plane: "EnemyBomberPlane", delay: 0, position: CGPoint(x: 1, y: 0.4)),
+            LevelPlane(plane: "EnemyBomberPlane", delay: 0, position: CGPoint(x: 1, y: 0.3)),
+            LevelPlane(plane: "SupplyPlane", delay: 0, position: CGPoint(x: 1, y: 0.7)),
+            LevelPlane(plane: "EnemyBomberPlane", delay: 2, position: CGPoint(x: -1, y: 0.6)),
+            LevelPlane(plane: "EnemyBomberPlane", delay: 2, position: CGPoint(x: -1, y: 0.2))
         ]
     )]
     

@@ -26,7 +26,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         var steps = [SKAction]()
         for levelPlane in level!.levelPlanes {
             let doAddPlane = SKAction.runBlock({
-                let plane = Plane.createLevelPlane(levelPlane.position!)
+                let plane = levelPlane.createPlane()
                 self.background!.addChild(plane)
             })
             let doDelay = SKAction.waitForDuration(Double(levelPlane.delay!))

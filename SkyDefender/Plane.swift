@@ -2,10 +2,10 @@ import UIKit
 import SpriteKit
 
 class Plane: Life, MovingBodyTrait, PointTrait {
-    let theTexture = SKTexture(imageNamed: "plane")
+    var theTexture: SKTexture!
     var planeNode: SKSpriteNode?
     var angle: CGFloat = 0
-    var points = 350
+    var points: Int = 100
     var movingSpeed: CGFloat = 60 {
         didSet {
             if movingSpeed > 0 {
@@ -16,26 +16,17 @@ class Plane: Life, MovingBodyTrait, PointTrait {
         }
     }
     
-    static func createLevelPlane(position: CGPoint) -> Plane {
-        let p = Plane()
-        let planeXPosition: CGFloat = position.x < 0 ? -Util.backgroundLength/2 + 50 : Util.backgroundLength/2 - 50
-        let planeYPosition: CGFloat = position.y * Util.backgroundLength/2
-        p.position = CGPoint(x: planeXPosition, y: planeYPosition)
-        if planeXPosition > 0 {
-            p.flip()
-        }
-        return p
-    }
-    
-    init(movingSpeed: CGFloat = 60) {
+    init(theTexture: SKTexture, movingSpeed: CGFloat = 60, points: Int = 100) {
         super.init(size: theTexture.size())
         
+        self.theTexture = theTexture
         self.movingSpeed = movingSpeed
+        self.points = points
+        
         zPosition = 5
         
         setupPlaneNode()
         initPhysics()
-        initDropBombs()
         
         Util.movingBodies.append(self)
     }
@@ -70,23 +61,6 @@ class Plane: Life, MovingBodyTrait, PointTrait {
         let doWait = SKAction.waitForDuration(1)
         let doSequence = SKAction.sequence([doWait, doResumeFlipping])
         runAction(doSequence, withKey: Util.resumeFlipping)
-    }
-    
-    func initDropBombs() {
-        dropNextBomb()
-    }
-    
-    func dropNextBomb() {
-        let delay = Double((Double(arc4random_uniform(10)) * 0.1) + 1)
-        let doWait = SKAction.waitForDuration(delay)
-        let doDrop = SKAction.runBlock({
-            let initialDirection = self.movingSpeed > 0 ? 0 : CGFloat(M_PI)
-            let bomb = Bomb(position: self.position, initialDirection: initialDirection)
-            self.parent?.addChild(bomb)
-            self.dropNextBomb()
-        })
-        let doSequence = SKAction.sequence([doWait, doDrop])
-        runAction(doSequence)
     }
     
     func initPhysics() {
