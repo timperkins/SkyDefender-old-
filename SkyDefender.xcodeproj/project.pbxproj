@@ -30,6 +30,7 @@
 		D06D72D21C287C1400119636 /* Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D11C287C1400119636 /* Util.swift */; };
 		D06D72D41C287EA800119636 /* LevelScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D31C287EA800119636 /* LevelScene.swift */; };
 		D06D72D61C28831800119636 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = D06D72D51C28831800119636 /* Level.swift */; };
+		D0BC757D1C42010E002A6FB9 /* PointTrait.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BC757C1C42010E002A6FB9 /* PointTrait.swift */; };
 		D0C900F51C28E9DA00E4BA73 /* PauseModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */; };
 		D0F495251C31E27200B68198 /* Plane.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F495241C31E27200B68198 /* Plane.swift */; };
 		D0F495271C31E3AE00B68198 /* plane@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0F495261C31E3AE00B68198 /* plane@3x.png */; };
@@ -83,6 +84,7 @@
 		D06D72D11C287C1400119636 /* Util.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Util.swift; sourceTree = "<group>"; };
 		D06D72D31C287EA800119636 /* LevelScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelScene.swift; sourceTree = "<group>"; };
 		D06D72D51C28831800119636 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
+		D0BC757C1C42010E002A6FB9 /* PointTrait.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PointTrait.swift; sourceTree = "<group>"; };
 		D0C900F41C28E9DA00E4BA73 /* PauseModal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PauseModal.swift; sourceTree = "<group>"; };
 		D0F495241C31E27200B68198 /* Plane.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Plane.swift; sourceTree = "<group>"; };
 		D0F495261C31E3AE00B68198 /* plane@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "plane@3x.png"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				D06D72D51C28831800119636 /* Level.swift */,
 				D06D72D11C287C1400119636 /* Util.swift */,
 				D0F495281C32E30900B68198 /* MovingBodyTrait.swift */,
+				D0BC757C1C42010E002A6FB9 /* PointTrait.swift */,
 				D0F495241C31E27200B68198 /* Plane.swift */,
 				D0FCF64E1C36E01F00C8EF98 /* Bomb.swift */,
 				D0F4952E1C35E2C000B68198 /* LevelPlane.swift */,
@@ -317,6 +320,7 @@
 				D06495531C3ECA1C00F086F5 /* LevelStats.swift in Sources */,
 				D06D72D61C28831800119636 /* Level.swift in Sources */,
 				D0FCF65B1C39CD0500C8EF98 /* BaseHealthBar.swift in Sources */,
+				D0BC757D1C42010E002A6FB9 /* PointTrait.swift in Sources */,
 				D06D72AF1C285FC100119636 /* GameViewController.swift in Sources */,
 				D0FCF6551C3711BF00C8EF98 /* Base.swift in Sources */,
 				D06D72D21C287C1400119636 /* Util.swift in Sources */,

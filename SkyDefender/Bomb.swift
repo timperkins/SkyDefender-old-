@@ -1,12 +1,13 @@
 import UIKit
 import SpriteKit
 
-class Bomb: Life, MovingBodyTrait {
+class Bomb: Life, MovingBodyTrait, PointTrait {
     let theTexture = SKTexture(imageNamed: "bomb")
     var bombNode: SKSpriteNode?
     var angle: CGFloat = 0
     var movingSpeed = CGFloat(40)
     var damage: Int?
+    var points = 50
     var initialDirection: CGFloat = 0
     init(position: CGPoint, angle: CGFloat = CGFloat(M_PI), damage: Int = 10, initialDirection: CGFloat = 0) {
         super.init(size: theTexture.size(), hideHealthBar: true, health: 1)
@@ -45,6 +46,7 @@ class Bomb: Life, MovingBodyTrait {
     
     override func didExplode() {
         Util.movingBodies.removeObject(self as SKNode)
+        levelStats.score += points
     }
     
     func initRotation() {

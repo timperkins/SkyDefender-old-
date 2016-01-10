@@ -3,18 +3,17 @@ import SpriteKit
 
 class LevelScore: NSObject {
     var scene: LevelScene?
-    var levelStats: LevelStats?
+    var scoreLabel: SKLabelNode!
     
-    init(scene: LevelScene, levelStats: LevelStats) {
+    init(scene: LevelScene) {
         super.init()
         self.scene = scene
-        self.levelStats = levelStats
-        self.levelStats!.addObserver(self, forKeyPath: "score", options: .New, context: &Util.scoreContext)
+        levelStats.addObserver(self, forKeyPath: "score", options: .New, context: &Util.scoreContext)
         setupScore()
     }
     
     deinit {
-        self.levelStats!.removeObserver(self, forKeyPath: "score", context: &Util.scoreContext)
+        levelStats.removeObserver(self, forKeyPath: "score", context: &Util.scoreContext)
     }
     
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
@@ -28,7 +27,7 @@ class LevelScore: NSObject {
     }
     
     func setupScore() {
-        let scoreLabel = SKLabelNode(fontNamed: Util.fontFat)
+        scoreLabel = SKLabelNode(fontNamed: Util.fontFat)
         scoreLabel.text = "000000"
         scoreLabel.name = "levelScore"
         scoreLabel.fontSize = 20
@@ -41,7 +40,13 @@ class LevelScore: NSObject {
         updateScore()
     }
     
-    func updateScore(score: Int = 100) {
-        print(score)
+    func updateScore(score: Int = 0) {
+        let scoreString = String(score)
+        let numLeadingZeros = 6 - scoreString.characters.count
+        var leadingZeros = ""
+        for _ in 1...numLeadingZeros {
+            leadingZeros = leadingZeros + "0"
+        }
+        scoreLabel.text = leadingZeros + scoreString
     }
 }

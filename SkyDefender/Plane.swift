@@ -1,10 +1,11 @@
 import UIKit
 import SpriteKit
 
-class Plane: Life, MovingBodyTrait {
+class Plane: Life, MovingBodyTrait, PointTrait {
     let theTexture = SKTexture(imageNamed: "plane")
     var planeNode: SKSpriteNode?
     var angle: CGFloat = 0
+    var points = 350
     var movingSpeed: CGFloat = 60 {
         didSet {
             if movingSpeed > 0 {
@@ -102,5 +103,6 @@ class Plane: Life, MovingBodyTrait {
     
     override func didExplode() {
         Util.movingBodies.removeObject(self as SKNode)
+        levelStats.score += points
     }
 }

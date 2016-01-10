@@ -7,3 +7,4 @@ class LevelStats: NSObject {
         score = 0
     }
 }
+let levelStats = LevelStats()
