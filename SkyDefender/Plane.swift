@@ -4,6 +4,7 @@ import SpriteKit
 class Plane: Life, MovingBodyTrait, PointTrait {
     var theTexture: SKTexture!
     var planeNode: SKSpriteNode?
+    var indicator: PlaneIndicator!
     var angle: CGFloat = 0
     var points: Int = 100
     var movingSpeed: CGFloat = 60 {
@@ -26,6 +27,7 @@ class Plane: Life, MovingBodyTrait, PointTrait {
         zPosition = 5
         
         setupPlaneNode()
+        setupIndicator()
         initPhysics()
         
         Util.movingBodies.append(self)
@@ -39,6 +41,10 @@ class Plane: Life, MovingBodyTrait, PointTrait {
         planeNode = SKSpriteNode(texture: theTexture)
         planeNode!.size = size
         self.addChild(planeNode!)
+    }
+    
+    func setupIndicator() {
+        indicator = PlaneIndicator(plane: self)
     }
     
     func updateVelocity(angle: CGFloat) {

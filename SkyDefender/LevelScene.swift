@@ -28,6 +28,7 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             let doAddPlane = SKAction.runBlock({
                 let plane = levelPlane.createPlane()
                 self.background!.addChild(plane)
+                self.addChild(plane.indicator)
             })
             let doDelay = SKAction.waitForDuration(Double(levelPlane.delay!))
             steps.append(doDelay)
@@ -47,6 +48,11 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         baseHealthBar = nil
     }
     
+    override func update(currentTime: CFTimeInterval) {
+        /* Called before each frame is rendered */
+        mapPlanePositions()
+    }
+    
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         let touch = touches.first
         let location = touch!.locationInNode(self)
@@ -61,6 +67,27 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         let nodesTouched = nodesAtPoint(location)
         
         NSNotificationCenter.defaultCenter().postNotificationName(Util.offTouch, object: nil, userInfo: ["nodesTouched": nodesTouched])
+    }
+    
+    
+    func mapPlanePositions() {
+        for node in children {
+            if node is PlaneIndicator {
+                let indicator = node as! PlaneIndicator
+                let plane = indicator.plane
+                indicator.hidden = intersectsNode(plane.planeNode!)
+                if !indicator.hidden {
+                    let gap: CGFloat = 4
+                    let p = convertPoint(plane.position, fromNode: background!)
+                    let xPos: CGFloat = p.x < 0 ? gap : size.width - gap
+                    var yPos = (p.x - xPos) * CGFloat(-tan(deviceTilt)) + p.y
+                    if yPos > size.height - gap {
+                        yPos = size.height - gap
+                    }
+                    indicator.position = CGPoint(x: xPos, y: yPos)
+                }
+            }
+        }
     }
     
     func returnToLevelSelectScene() {
