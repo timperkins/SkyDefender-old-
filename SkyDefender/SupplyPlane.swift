@@ -6,7 +6,8 @@ class SupplyPlane: Plane {
         let theTexture = SKTexture(imageNamed: "supply-plane")
         let movingSpeed:CGFloat = 20
         let points = -500
-        super.init(theTexture: theTexture, movingSpeed: movingSpeed, points: points)
+        let color = SKColor(red: 24/255, green: 143/255, blue: 170/255, alpha: 1)
+        super.init(theTexture: theTexture, movingSpeed: movingSpeed, points: points, color: color)
     }
     
     required init?(coder aDecoder: NSCoder) {

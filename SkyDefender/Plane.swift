@@ -5,6 +5,7 @@ class Plane: Life, MovingBodyTrait, PointTrait {
     var theTexture: SKTexture!
     var planeNode: SKSpriteNode?
     var indicator: PlaneIndicator!
+    var color: SKColor!
     var angle: CGFloat = 0
     var points: Int = 100
     var movingSpeed: CGFloat = 60 {
@@ -17,12 +18,13 @@ class Plane: Life, MovingBodyTrait, PointTrait {
         }
     }
     
-    init(theTexture: SKTexture, movingSpeed: CGFloat = 60, points: Int = 100) {
+    init(theTexture: SKTexture, movingSpeed: CGFloat = 60, points: Int = 100, color: SKColor = SKColor.blackColor()) {
         super.init(size: theTexture.size())
         
         self.theTexture = theTexture
         self.movingSpeed = movingSpeed
         self.points = points
+        self.color = color
         
         zPosition = 5
         

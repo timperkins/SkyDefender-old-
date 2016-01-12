@@ -15,7 +15,7 @@ class PlaneIndicator: SKShapeNode {
         self.path = path
         
         lineWidth = 0
-        fillColor = SKColor.redColor()
+        fillColor = plane.color
         zPosition = 7
     }
     
