@@ -195,6 +195,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
             (secondBody.categoryBitMask & CollisionCategories.Bomb != 0)) {
                 if let curMissle = firstBody.node as? Missle {
                     curMissle.explode()
+                    if let curBomb = secondBody.node as? Bomb {
+                        levelStats.score += curBomb.points
+                    }
                 }
         }
         

@@ -46,11 +46,10 @@ class Bomb: Life, MovingBodyTrait, PointTrait {
     
     override func didExplode() {
         Util.movingBodies.removeObject(self as SKNode)
-        levelStats.score += points
     }
     
     func initRotation() {
-        let rotate = SKAction.rotateToAngle(-CGFloat(M_PI_2), duration: 1, shortestUnitArc: true)
+        let rotate = SKAction.rotateToAngle(-CGFloat(M_PI_2), duration: 2, shortestUnitArc: true)
         runAction(rotate)
     }
     
