@@ -84,6 +84,7 @@ class Plane: Life, MovingBodyTrait, PointTrait {
     }
     
     override func didExplode() {
+        super.didExplode()
         Util.movingBodies.removeObject(self as SKNode)
         levelStats.score += points
     }

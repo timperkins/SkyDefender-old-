@@ -4,6 +4,7 @@ import CoreMotion
 class LevelScene: SKScene, SKPhysicsContactDelegate {
     let motionManager: CMMotionManager = CMMotionManager()
     var pauseModal: PauseModal?
+    var gameOverModal: GameOverModal?
     var baseHealthBar: BaseHealthBar?
     var background: SKSpriteNode?
     var base: Base?
@@ -11,10 +12,13 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
     var level: Level?
     var deviceTilt = 0.0
     var levelScore: LevelScore?
+    var hideableShellComponents: [String] = [Util.pauseButton, Util.baseHealthBar, Util.levelScore]
     override func didMoveToView(view: SKView) {
         level = userData?.valueForKey("level") as? Level
         background = level!.background
         pauseModal = PauseModal(scene: self)
+        gameOverModal = GameOverModal(scene: self)
+
         levelScore = LevelScore(scene: self)
         self.physicsWorld.gravity = CGVectorMake(0, 0)
         self.physicsWorld.contactDelegate = self
@@ -46,6 +50,9 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         // Remove shell nodes
         pauseModal = nil
         baseHealthBar = nil
+        gameOverModal!.close()
+        gameOverModal = nil
+        levelScore = nil
     }
     
     override func update(currentTime: CFTimeInterval) {
@@ -97,6 +104,29 @@ class LevelScene: SKScene, SKPhysicsContactDelegate {
         levelSelectScene.scaleMode = self.scaleMode
         let transitionType = SKTransition.fadeWithDuration(1)
         self.view?.presentScene(levelSelectScene,transition: transitionType)
+    }
+    
+    func hideShellComponents() {
+        for node in children {
+            if let n = node.name {
+                if hideableShellComponents.indexOf(n) != nil {
+                    node.hidden = true
+                }
+            }
+            
+        }
+    }
+    
+    func showShellComponents() {
+        for node in children {
+            if let n = node.name {
+                print(n)
+                if hideableShellComponents.indexOf(n) != nil {
+                    node.hidden = false
+                }
+            }
+            
+        }
     }
     
     func restartLevel() {

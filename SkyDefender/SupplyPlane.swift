@@ -13,4 +13,9 @@ class SupplyPlane: Plane {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
+    
+    override func didExplode() {
+        super.didExplode()
+        levelStats.lostLevel("You destroyed a supply plane.")
+    }
 }

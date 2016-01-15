@@ -40,6 +40,7 @@ class BaseHealthBar: NSObject {
         healthBarContainer = SKShapeNode(rect: CGRect(x: 0, y: 0, width: barWidth, height: barHeight), cornerRadius: 1)
         healthBarContainer?.zPosition = 6
         healthBarContainer?.lineWidth = 0
+        healthBarContainer?.name = Util.baseHealthBar
         healthBarContainer?.position = CGPoint(x: barLeft, y: Int(scene!.size.height)-barTop)
         healthBarContainer?.fillColor = SKColor(red: 1, green: 1, blue: 1, alpha: 1)
         scene!.addChild(healthBarContainer!)

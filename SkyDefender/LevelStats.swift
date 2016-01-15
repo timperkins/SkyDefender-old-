@@ -1,10 +1,16 @@
 import Foundation
 
 class LevelStats: NSObject {
-    dynamic var score: Int
+    dynamic var score: Int = 0
+    dynamic var gameOver = false
+    var gameOverReason = ""
+    var didLose = false
+    var didWin = false
     
-    override init() {
-        score = 0
+    func lostLevel(reason: String) {
+        gameOverReason = reason
+        didLose = true
+        gameOver = true
     }
 }
-let levelStats = LevelStats()
+var levelStats: LevelStats! = LevelStats()

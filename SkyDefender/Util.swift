@@ -23,17 +23,22 @@ class Util {
     
     static var healthContext = 0
     static var scoreContext = 1
+    static var gameOverContext = 2
     
     static let redColor = SKColor(red: 1, green: 0, blue: 0, alpha: 1)
     static let yellowColor = SKColor(red: 1, green: 206/255, blue: 0, alpha: 1)
     static let greenColor = SKColor(red: 0, green: 137/255, blue: 23/255, alpha: 1)
     
+    static let fontLight = "AvenirNext-UltraLight"
+    static let fontRegular = "AvenirNext-Regular"
+    static let fontFat = "AvenirNext-Heavy"
+    
     static var movingBodies = [SKNode]()
     
     static let background = "background"
+    static let baseHealthBar = "baseHealthBar"
     static let closeModalButton = "closeModalButton"
-    static let fontLight = "HelveticaNeue-UltraLight"
-    static let fontFat = "AvenirNext-Heavy"
+    static let levelScore = "levelScore"
     static let listButton = "listButton"
     static let missleRepeat = "missleRepeat"
     static let offTouch = "offTouch"

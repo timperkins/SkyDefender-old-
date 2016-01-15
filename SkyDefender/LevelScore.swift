@@ -29,7 +29,7 @@ class LevelScore: NSObject {
     func setupScore() {
         scoreLabel = SKLabelNode(fontNamed: Util.fontFat)
         scoreLabel.text = "000000"
-        scoreLabel.name = "levelScore"
+        scoreLabel.name = Util.levelScore
         scoreLabel.fontSize = 20
         scoreLabel.fontColor = SKColor.blackColor()
         scoreLabel.position = CGPoint(x: 12, y: scene!.size.height - 12)
